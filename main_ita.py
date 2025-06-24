@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-File Integrity Checker - Release Finale
+File Integrity Checker - Italiano
 ------------------------------------------
 Un'applicazione per monitorare i file critici o intere directory, calcolando e confrontando
 i loro hash SHA256 per rilevare modifiche non autorizzate.
