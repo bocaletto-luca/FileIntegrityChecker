@@ -7,13 +7,13 @@ their SHA256 hashes to detect unauthorized modifications.
 
 Features:
   - Select a directory to monitor.
-  - Recursively calculate the SHA256 hash for every file (reading files in chunks).
+  - Recursively calculate the SHA256 hash for every file (reading in 4096-byte chunks).
   - Save the initial state (file paths and hashes) in a JSON file.
-  - Perform manual and scheduled scans to detect modified, removed, or new files.
-  - Visual notifications via the output area and pop-up message boxes.
-  - Option for scheduled scans with the ability to cancel them.
-  - A clean, professional GUI with status labels and a progress bar.
-  - Advanced logging of operations and errors in "file_integrity_checker.log".
+  - Manually or periodically verify the integrity by comparing the current hashes with the initial state.
+  - Visual notifications via the output area and message boxes when changes are detected.
+  - Scheduled scan option with the ability to stop the scheduled scan.
+  - Clean, user-friendly GUI built with Tkinter.
+  - Advanced logging (all operations and errors are stored in "file_integrity_checker.log").
 
 Author: [Your Name]
 License: GPL
@@ -44,7 +44,7 @@ SCAN_INTERVAL_MS = 60000  # Scheduled scan interval in milliseconds (60 seconds)
 def calculate_hash(file_path):
     """
     Calculates the SHA256 hash for the given file.
-    It reads the file in blocks of 4096 bytes, allowing for large files.
+    Reads the file in 4096-byte blocks to handle large files.
     """
     try:
         sha256 = hashlib.sha256()
@@ -58,7 +58,7 @@ def calculate_hash(file_path):
 
 def scan_directory(directory):
     """
-    Recursively scans the directory (excluding directories in EXCLUDE_DIRS)
+    Recursively scans the given directory (excluding directories in EXCLUDE_DIRS)
     and calculates the SHA256 hash for every file.
     
     Returns a dictionary in the form {file_path: hash}.
@@ -89,27 +89,27 @@ class FileIntegrityCheckerGUI(tk.Tk):
 
     def create_widgets(self):
         # Directory selection frame
-        dir_frame = ttk.Frame(self)
-        dir_frame.pack(fill=tk.X, padx=10, pady=5)
-        lbl_dir = ttk.Label(dir_frame, text="Directory to Monitor:")
+        frame_dir = ttk.Frame(self)
+        frame_dir.pack(fill=tk.X, padx=10, pady=5)
+        lbl_dir = ttk.Label(frame_dir, text="Directory to Monitor:")
         lbl_dir.pack(side=tk.LEFT, padx=5)
-        self.entry_dir = ttk.Entry(dir_frame, width=50)
+        self.entry_dir = ttk.Entry(frame_dir, width=50)
         self.entry_dir.pack(side=tk.LEFT, padx=5)
-        btn_select = ttk.Button(dir_frame, text="Select", command=self.select_directory)
+        btn_select = ttk.Button(frame_dir, text="Select", command=self.select_directory)
         btn_select.pack(side=tk.LEFT, padx=5)
 
-        # Action buttons frame
-        button_frame = ttk.Frame(self)
-        button_frame.pack(fill=tk.X, padx=10, pady=5)
-        btn_calc = ttk.Button(button_frame, text="Calculate Initial Hashes", command=self.calculate_initial_hashes)
+        # Buttons frame
+        frame_buttons = ttk.Frame(self)
+        frame_buttons.pack(fill=tk.X, padx=10, pady=5)
+        btn_calc = ttk.Button(frame_buttons, text="Calculate Initial Hashes", command=self.calculate_initial_hashes)
         btn_calc.pack(side=tk.LEFT, padx=5)
-        btn_save = ttk.Button(button_frame, text="Save State", command=self.save_state)
+        btn_save = ttk.Button(frame_buttons, text="Save State", command=self.save_state)
         btn_save.pack(side=tk.LEFT, padx=5)
-        btn_verify = ttk.Button(button_frame, text="Verify Integrity", command=self.verify_integrity)
+        btn_verify = ttk.Button(frame_buttons, text="Verify Integrity", command=self.verify_integrity)
         btn_verify.pack(side=tk.LEFT, padx=5)
-        btn_start_sched = ttk.Button(button_frame, text="Start Scheduled Scan", command=self.start_scheduled_scan)
+        btn_start_sched = ttk.Button(frame_buttons, text="Start Scheduled Scan", command=self.start_scheduled_scan)
         btn_start_sched.pack(side=tk.LEFT, padx=5)
-        btn_stop_sched = ttk.Button(button_frame, text="Stop Scheduled Scan", command=self.stop_scheduled_scan)
+        btn_stop_sched = ttk.Button(frame_buttons, text="Stop Scheduled Scan", command=self.stop_scheduled_scan)
         btn_stop_sched.pack(side=tk.LEFT, padx=5)
 
         # Output text area
@@ -140,7 +140,7 @@ class FileIntegrityCheckerGUI(tk.Tk):
         self.text_output.insert(tk.END, "Initial hashes calculated:\n")
         for path, hash_val in state.items():
             self.text_output.insert(tk.END, f"{path}: {hash_val}\n")
-        self.lbl_status.config(text="Initial hashes successfully calculated.")
+        self.lbl_status.config(text="Initial hashes calculated.")
 
     def save_state(self):
         if not self.initial_state:
