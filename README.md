@@ -82,7 +82,7 @@ This project is licensed under the GNU General Public License (GPL). See the [LI
 
 ## Contact
 
-For any questions, issues, or contributions, please open an issue on the [GitHub Issues page](https://github.com/bocaletto-luca/FileIntegrityChecker/issues) or contact me via email at [your.email@example.com](mailto:your.email@example.com).
+For any questions, issues, or contributions, please open an issue on the [GitHub Issues page](https://github.com/bocaletto-luca/FileIntegrityChecker/issues) or contact me via email.
 
 ---
 
