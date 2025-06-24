@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta -->
+  <meta charset="utf-8">
+  <title>FileIntegrityChecker - Linux File Integrity Monitor - Bocaletto L.</title>
+  <meta name="description" content="FileIntegrityChecker is a Linux application that monitors the integrity of files and directories by calculating and comparing SHA256 hashes to detect unauthorized modifications.">
+  <meta name="keywords" content="FileIntegrityChecker, Linux, file integrity, SHA256, monitor, security, Tkinter, file scanner, bocaletto luca">
+  <meta name="author" content="Bocaletto Luca">
+  
+  <!-- Mobile Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="FileIntegrityChecker - Linux File Integrity Monitor">
+  <meta property="og:description" content="Monitor critical files and directories on Linux by computing SHA256 hashes and comparing them over time.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/bocaletto-luca/FileIntegrityChecker">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=FileIntegrityChecker">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FileIntegrityChecker - Linux File Integrity Monitor">
+  <meta name="twitter:description" content="A comprehensive Linux tool that monitors file integrity using SHA256 hashes and a Tkinter GUI.">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=FileIntegrityChecker">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Custom CSS -->
+  <style>
+    body {
+      padding-top: 70px;
+    }
+    header {
+      background-color: #343a40;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      color: #fff;
+      margin: 0;
+      font-size: 2.8rem;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1920x600.png?text=FileIntegrityChecker') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.25rem;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    footer {
+      background-color: #343a40;
+      color: #ccc;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header: Single title -->
+  <header>
+    <h1>FileIntegrityChecker</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Linux File Integrity Monitor</h2>
+      <p class="lead">Monitor critical files &amp; directories by calculating SHA256 hashes to detect unauthorized modifications.</p>
+      <a href="https://github.com/bocaletto-luca/FileIntegrityChecker" class="btn btn-primary btn-lg" target="_blank">View on GitHub</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Introduction Section -->
+    <section id="introduction">
+      <h2>About FileIntegrityChecker</h2>
+      <p>FileIntegrityChecker is a comprehensive tool designed for Linux systems to monitor the integrity of files and directories. By calculating and comparing SHA256 hashes, this application helps you quickly detect unauthorized modifications, additions, or deletions.</p>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Directory Selection:</strong> Easily choose the directory you want to monitor.</li>
+        <li><strong>Recursive File Scanning:</strong> Calculates SHA256 hashes for every file (reading in 4096-byte chunks) within the chosen directory.</li>
+        <li><strong>Initial State Storage:</strong> Saves the initial file hashes in a JSON file for future comparisons.</li>
+        <li><strong>Integrity Verification:</strong> Manually or periodically compare the current state to the saved state to detect modifications, deletions, or new files.</li>
+        <li><strong>Scheduled Scanning:</strong> Automate the integrity checking process at regular intervals, with a simple start/stop mechanism.</li>
+        <li><strong>Visual Notifications:</strong> Receive alerts via the GUI output and pop-up messages when changes are detected.</li>
+        <li><strong>Robust Logging:</strong> All operations and errors are logged into a file (<code>file_integrity_checker.log</code>) for troubleshooting.</li>
+        <li><strong>Easy-to-use Interface:</strong> A clean and professional GUI built using Python's Tkinter.</li>
+      </ul>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download">
+      <h2>Download</h2>
+      <p>You can download the source code and latest release from our <a href="https://github.com/bocaletto-luca/FileIntegrityChecker" target="_blank">GitHub repository</a>.</p>
+      <p>The repository contains two versions:</p>
+      <ul>
+        <li><code>main_eng.py</code> – English version</li>
+        <li><code>main_ita.py</code> – Italian version</li>
+      </ul>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you have any questions, issues, or contributions, please open an issue on our <a href="https://github.com/bocaletto-luca/FileIntegrityChecker/issues" target="_blank">GitHub Issues</a> page or email us at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 FileIntegrityChecker | Developed by <a href="https://github.com/bocaletto-luca" target="_blank">Bocaletto Luca</a></p>
+      <p>
+        <a href="https://github.com/bocaletto-luca/FileIntegrityChecker" target="_blank">GitHub Repository</a> |
+        <a href="https://github.com/bocaletto-luca" target="_blank">GitHub Profile</a>
+      </p>
+    </div>
+  </footer>
+  
+  <!-- Optional JavaScript -->
+  <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdH/Eklw7xN8YHc22J7R6YkxZtN1JnuV1YjEjtBysvFWZBHpTkJF9w8o0BfVO1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4GE3l3MdLsZo1uEv9vYQBMK7Md5vX2rWcOZh3Iq3s2/XVfK8rgPbT4gv+" crossorigin="anonymous"></script>
+</body>
+</html>
