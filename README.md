@@ -14,7 +14,8 @@ FileIntegrityChecker is a Linux application written in Python with a Tkinter GUI
 - **main_japanese.py** – The Japanese version.
 - **main_hindi.py** – The Hindi version.
 - **main_bengali.py** – The Bengali version.
-- 
+- **main_korean.py** – The Korean version.
+  
 ## Features
 
 - **Directory Selection:**  
