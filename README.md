@@ -4,6 +4,10 @@
 FileIntegrityChecker is a Linux application written in Python with a Tkinter GUI that monitors critical files or entire directories by calculating and comparing their SHA256 hashes. By detecting any unauthorized modifications, it helps maintain file integrity and alerts you to changes. The project comes in two versions:
 - **main_eng.py** – The English version.
 - **main_ita.py** – The Italian version.
+- **main_spanish.py** – The Spanish version.
+- **main_french.py** – The French version.
+- **main_portugues.py** – The Portugues version.
+- **main_deutch.py** – The Deutch version.
 
 ## Features
 
