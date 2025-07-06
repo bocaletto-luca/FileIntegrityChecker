@@ -1,6 +1,8 @@
 # FileIntegrityChecker
 #### Author: Bocaletto Luca
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge&logo=gnu)](LICENSE) [![Language: Python](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python)](https://www.python.org/) [![Linux-Compatible](https://img.shields.io/badge/Linux-Compatible-blue?style=for-the-badge&logo=linux)](https://www.kernel.org/) [![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)](https://github.com/bocaletto-luca/Directory-Monitor)
+
 FileIntegrityChecker is a Linux application written in Python with a Tkinter GUI that monitors critical files or entire directories by calculating and comparing their SHA256 hashes. By detecting any unauthorized modifications, it helps maintain file integrity and alerts you to changes. The project comes in two versions:
 - **main_eng.py** – The English version.
 - **main_ita.py** – The Italian version.
